@@ -1,0 +1,130 @@
+@import "globals";
+
+////////////////////////// Loading
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0;
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: rgba($grey-color, 0.8);
+  }
+  .icon {
+    animation: loadingAnim 0.6s infinite linear;
+    color: $main-color;
+  }
+}
+
+.btn .loading-icon {
+  animation: loadingAnim 0.6s infinite linear;
+}
+
+////////////////////////// Settings Panel
+.settings-panel {
+  padding: 20px 0;
+  position: relative;
+
+  @media (max-width: 991px) {
+    .settings-container {
+      max-width: 70%;
+    }
+    .middle-section {
+      padding: 70px 0 50px;
+    }
+  }
+  @media (max-width: 768px) {
+    .settings-container {
+      max-width: 90%;
+    }
+  }
+}
+
+// app layer
+.app-layer {
+  margin-bottom: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 11px;
+  width: 100%;
+  background: $light-main-color;
+  color: $white-color;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: $box-shadow;
+  cursor: pointer;
+  .layer-name {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &.active {
+    background-image: none;
+    background-color: $white-color;
+    color: $dark-color;
+    border-color: rgba($dark-color, 0.2);
+  }
+  button {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font-size: 18px;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    line-height: 15px;
+  }
+  input {
+    outline: none;
+    padding: 4px 8px;
+    font-size: 12px;
+    width: 100%;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 0;
+  }
+}
+
+////////////////////////// Results Panel
+.results-panel {
+  header {
+    background-color: $main-color;
+    color: $white-color;
+    padding: 70px 0;
+    h6 {
+      font-weight: 400;
+    }
+  }
+  .collection-images {
+    padding: 40px 0;
+  }
+  .options-bar {
+    background-color: $bg-color;
+    padding: 10px;
+    border-radius: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    @media (max-width: 768px) {
+      button {
+        display: block;
+        width: 100%;
+        margin-bottom: 14px;
+      }
+    }
+  }
+}
+
+
+.sticky-panel {
+  position: sticky;
+  top: 0;
+  padding-top: 20px;
+}
